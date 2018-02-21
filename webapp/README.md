@@ -10,20 +10,27 @@ Restaurant search app
 - Add Redux store
 - Wrap routes for Redux Store synching
 
-## Step 3
+## Step 3 (step1-sw)
 - Service Worker Registration
 - Handle lifecycle events
 - Add offline indication
 
-## Step 4
+## Step 4 (step2-sw)
 - App shell
 - Caching (Pre caching, Caching dynamic data)
 
-## Step 5
+## Step 5 (spt3-sw)
 - Manifest
 - Native experience
 
-## Step 6
+## Step 6 (step4-sw)
 - Push notification
 - Background sync
 
+### Resources
+- https://developers.google.com/web/ilt/pwa/
+- https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/
+- https://developers.google.com/web/tools/workbox/get-started/npm-script
+- https://app-manifest.firebaseapp.com/
+- https://tests.peter.sh/notification-generator/
+- https://web-push-codelab.glitch.me/
