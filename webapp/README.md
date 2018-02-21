@@ -13,11 +13,11 @@ Restaurant search app
 ## Step 3
 - Service Worker Registration
 - Handle lifecycle events
+- Add offline indication
 
 ## Step 4
 - App shell
 - Caching (Pre caching, Caching dynamic data)
-- Add offline indication
 
 ## Step 5
 - Manifest

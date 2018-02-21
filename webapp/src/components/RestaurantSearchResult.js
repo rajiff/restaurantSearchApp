@@ -47,16 +47,24 @@ export default class RestaurantSearchResult extends Component {
 	  						(this.props.isSearchInProgress ) ?
 	  							this.getProgressBlock()
 	  						:
-	  						( (this.props.searchResult.restaurants.length <=0 ) ? <PlaceHolder message='search for best dining experience..!'/> : '' )
+	  						( (!this.props.searchResult || !this.props.searchResult.restaurants || this.props.searchResult.restaurants.length <=0) ? <PlaceHolder message='search for best dining experience..!'/> : '' )
 	  				}
 	  			</Col>
 	  			<Col xs={12}>
-	  				{ (this.props.searchResult.restaurants.length > 0 ) ? <p>Showing {this.props.searchResult.results_shown} of {this.props.searchResult.results_found} restaurants </p>: '' }
+	  				{ (this.props.searchResult
+	  					&& this.props.searchResult.restaurants
+	  					&& this.props.searchResult.restaurants.length > 0 ) ?
+	  						<p>Showing {this.props.searchResult.results_shown} of {this.props.searchResult.results_found} restaurants </p>
+	  					: ''
+	  				}
 	  			</Col>
 	  		</Row>
 	  		<Row>
 	  				{
-	  					(!this.props.isSearchInProgress && this.props.searchResult.restaurants.length > 0) ?
+	  					(!this.props.isSearchInProgress
+	  						&& this.props.searchResult
+	  						&& this.props.searchResult.restaurants
+	  						&& this.props.searchResult.restaurants.length > 0) ?
 		  					this.props.searchResult.restaurants.map((r) => {
 		  						return (
 		  							<Col xs={12} sm={4} lg={3} key={r.restaurant.R.res_id}>

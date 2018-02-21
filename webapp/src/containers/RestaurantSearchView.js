@@ -12,6 +12,7 @@ export default class RestaurantSearchView extends Component {
     this.state = {
       isSearchInProgress: false,
       error: null,
+      searchMsg: null,
       searchResult: {
         restaurants: []
       }
@@ -22,10 +23,15 @@ export default class RestaurantSearchView extends Component {
     this.setState({isSearchInProgress: true});
 
     new RestaurantSearchService().searchRestaurantByWildString(searchQueryStr, (err, result) => {
+      let searchMsg = null;
+      if(err || (result.restaurants && result.restaurants.length <0) ) {
+        searchMsg = 'Search returned without any matching restaurants..!';
+      }
       this.setState({
         isSearchInProgress: false,
+        searchMsg: searchMsg,
         error: (err || null),
-        searchResult: (result || [])
+        searchResult: ((!err) ? result : [])
       })
     })
   }
@@ -34,6 +40,9 @@ export default class RestaurantSearchView extends Component {
     return (
     	<div>
       	<SearchField onSearch={this.handleSearchRestaurant} />
+        {
+          (this.state.searchMsg) ? <h4>{this.state.searchMsg}</h4> : ''
+        }
         <RestaurantSearchResult isSearchInProgress={this.state.isSearchInProgress} searchResult={this.state.searchResult} />
     	</div>
     );

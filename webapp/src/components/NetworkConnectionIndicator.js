@@ -13,7 +13,7 @@ export default class NetworkConnectionIndicator extends Component {
     }
   }
 
-  updateOnlineStatus = (e) => {
+  updateOnlineStatus = () => {
     this.setState({
       isOffline: !navigator.onLine
     });
@@ -22,6 +22,8 @@ export default class NetworkConnectionIndicator extends Component {
   componentDidMount() {
     window.addEventListener('online', this.updateOnlineStatus);
     window.addEventListener('offline', this.updateOnlineStatus);
+    // Call on mount once to check and set if the online status
+    this.updateOnlineStatus();
   }
 
   render() {
