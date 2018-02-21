@@ -31,6 +31,7 @@ Restaurant search app
 - https://developers.google.com/web/ilt/pwa/
 - https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/
 - https://developers.google.com/web/tools/workbox/get-started/npm-script
+- https://developers.google.com/web/fundamentals/web-app-manifest/
 - https://app-manifest.firebaseapp.com/
 - https://tests.peter.sh/notification-generator/
-- https://web-push-codelab.glitch.me/
+- https://web-push-codelab.glitch.me

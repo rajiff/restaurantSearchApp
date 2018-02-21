@@ -25,7 +25,7 @@ export default class RestaurantDetailView extends Component {
       this.setState({
         isFetchProgress: false,
         error: (err || null),
-        restaurant: (result || {})
+        restaurant: (result || undefined)
       })
     })
   }

@@ -40,9 +40,9 @@ export default class RestaurantSearchService {
       .end((err, res) => {
       	if(err) {
       		let msg = this.normalizeHTTPError(err, res);
-      		done({error: msg});
+      		return done({error: msg});
       	}
-        done(null, res.body);
+        return done(null, res.body);
       })
   }
 }
