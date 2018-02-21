@@ -12,10 +12,10 @@ self.addEventListener('activate', function(event) {
   event.waitUntil(self.clients.claim());
 });
 
-self.addEventListener('fetch', function(event) {
+/*self.addEventListener('fetch', function(event) {
 	console.log('ServiceWorker fetch event invoked');
   event.respondWith(fetch(event.request));
-});
+});*/
 
 workboxSW.router.registerRoute(/.*(?:googleapis|gstatic)\.com.*$/,
   workboxSW.strategies.cacheFirst({
