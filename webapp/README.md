@@ -35,3 +35,5 @@ Restaurant search app
 - https://app-manifest.firebaseapp.com/
 - https://tests.peter.sh/notification-generator/
 - https://web-push-codelab.glitch.me
+- https://developers.google.com/web/ilt/pwa/introduction-to-service-worker-slides
+- https://developers.google.com/web/fundamentals/web-app-manifest/
